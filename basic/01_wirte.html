@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_wirte</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>01_wirte</h1>
+    <!-- script 구간이 아니어서 문자로 처리 -->
+    document.write("나는 나무") <br>
+    <script>
+        // document.write () html 에 문자열로 내용을 작성하는 함수
+        document.write("나는 고래"); // 내용 : "나는 고래"
+        document.write("</br>");
+        document.write("나는 상어"); // 내용 : "나는 고래"
+        document.write('</br>나는 상어');  //"", '' 문자열 
+        // document.write (나는 붕어) 나는 붕어 = 프로그램 진행시 유의미한 글자로 오인 
+        document.write("</br>");
+        document.write("123");
+        document.write("</br>");
+        document.write(456);
+        //숫자는 숫자값으로 처리 
+        document.write("</br>");
+        document.write(10 + 3);
+        document.write("</br>");
+        document.write("3" + 6); // 문자 8 숫자 6
+
+    </script>
+
+    <div>
+        나는 박스 
+    </div>
+    <script>
+        // script 분리 및 다중 작성 가능 
+        document.write("여긴 참나무</br>");
+
+        // console.: 웹 문서 : html 에 작성이 나닌 명령 실행 프롬프트
+        // 로그기록 이나 에러 특정 상황 파악 시 사용 
+        console.log("사슴벌레가 살지 ");
+        console.log("장수풍뎅이이이~");
+
+        document.write("나폴레옹 '어' 백설공주가 아닌데 라고 생각했다 </<br>");
+        document.write(" '불이야' </br>");
+        document.write("sk나폴레옹은 \"너그 속으로\'그산으로 가지마시오\' </br>");
+        document.write("이름\t: 정우성 \n 나이 \t:53<br/>");
+        console.log("이름\t: 정우성 \n나이 \t:53 <br/>");
+        /*
+        일반문서
+        \' :'
+        \\":"
+        \\:\
+        \t:tab
+        \n:enter
+        */
+
+        document.write("☆ <br/>");
+        document.write("月化 <br/>");
+
+    </script>
+</body>
+
+</html>

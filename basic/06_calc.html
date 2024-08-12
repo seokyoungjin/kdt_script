@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>06_calc</h1>
+    <script>
+        document.write("<h2>2.1 산술연산자</h2>");
+        /*
+        항 : 숫자(+,-*,/,%),    문자 , boolean 문자결합
+            // true = 1 flase = 0
+        결과 : 숫자             문자
+        
+        */
+        var a = 15, b = 7;
+        document.write(a + b);
+        document.write("<br/>");
+        document.write(a - b);
+        document.write("<br/>");
+        document.write(a / b);
+        document.write("<br/>");
+        document.write(a % b);
+        document.write("<br/>");
+        document.write(a * b);
+        document.write("<br/>");
+
+
+        a = 100; b = "장서건";
+
+        document.write(a + b);
+        document.write("<br/>");
+        document.write(a - b);
+        document.write("<br/>");
+        document.write(a / b);
+        document.write("<br/>");
+        document.write(a % b);
+        document.write("<br/>");
+        document.write(a * b);
+        document.write("<br/>");
+
+        a = false; b = true  // true : 1 false : 0
+
+        document.write(a + b);
+        document.write("<br/>");
+        document.write(a - b);
+        document.write("<br/>");
+        document.write(a / b);
+        document.write("<br/>");
+        document.write(a % b);
+        document.write("<br/>");
+        document.write(a * b);
+        document.write("<br/>");
+
+        a = 15; b = 7;
+
+        document.write(a + " + " + b + " : " + (a + b) + "<br/>");
+        document.write(a + " + " + b + " : " + (a - b) + "<br/>");
+        document.write(a + " + " + b + " : " + (a * b) + "<br/>");
+        document.write(a + " + " + b + " : " + (a / b) + "<br/>");
+        document.write(a + " + " + b + " : " + (a % b) + "<br/>");
+
+        document.write("<hr>")
+        document.write("<h2>2.2 비교연산자</h2>");
+        /*
+        항 : 숫자,문자,boolean(>,>=,<=,==,!=)   다른 자료형 (==,!=)
+                true = 1 flase = 0
+        결과 :  boolean
+
+        문자 : a < z,  A < a, ㄱ < ㅎ , ㅏ < ㅣ , 
+                    비교순서 : 초성 , 중성 , 종성
+
+        */
+        var a = 20, b = 10;
+
+        document.write(a > b);
+        document.write("<br/>");
+        document.write(a >= b);
+        document.write("<br/>");
+        document.write(a <= b);
+        document.write("<br/>");
+        document.write(a == b);
+        document.write("<br/>");
+        document.write(a != b);
+        document.write("<br/>");
+        document.write("<hr>")
+
+
+        a = 97; b = "a";
+
+        document.write(a > b);
+        document.write("<br/>");
+        document.write(a >= b);
+        document.write("<br/>");
+        document.write(a <= b);
+        document.write("<br/>");
+        document.write(a == b);
+        document.write("<br/>");
+        document.write(a != b);
+        document.write("<br/>");
+        document.write("<hr>")
+
+        a = true; b = false // true = 1 flase = 0
+        document.write(a > b);
+        document.write("<br/>");
+        document.write(a >= b);
+        document.write("<br/>");
+        document.write(a <= b);
+        document.write("<br/>");
+        document.write(a == b);
+        document.write("<br/>");
+        document.write(a != b);
+        document.write("<br/>");
+        document.write("<hr>")
+
+        a = 20; b - 10
+        document.write(a + " > " + b + " : " + (a + b) + "")
+
+        document.write("<h2>2.3 논리연산자</h2>");
+        /*
+        항 boolean 
+        결과 boolean
+
+
+        and && : a && b - a,b  모두 true 인경우만 true
+        자격증 시험 같은 경우 둘중 하나만 
+
+
+        or ||    a || b   a , b 한개이상 true 인경우 true  
+        영화관 티켓같은경우
+
+                true ,                  false 
+        문자     '내용' ,''              '',""
+        숫자    0 제외                      0
+        */
+
+        a = true; b = false;
+        document.write(a && b)
+        document.write("<br/>");
+        document.write(a || b)
+        document.write("<br/>");
+        document.write("<hr>")
+
+
+        a = 456; b = 123;
+        document.write(a && b)
+        document.write("<br/>");
+        document.write(a || b)
+        document.write("<br/>");
+
+
+        a = "아기상어"; b = false;
+        document.write(a && b)
+        document.write("<br/>");
+        document.write(a || b)
+        document.write("<hr>")
+
+        /*
+        우선순위
+        ()
+        *,/,%
+        + - 
+        비교
+        bit
+        논리
+        */
+
+
+        var age = 50, color = '녹색'
+        // var ageChK = age <= 25
+        // var colorChk = color == '녹색'
+        // document.write('and :' + (ageChK && colorChk ) + "<br/>")
+        // document.write('or :' + (ageChK || colorChk) +"<br/>" )
+
+
+        document.write('and :' + (age <= 25 && colorChk =='빨강') + "<br/>")
+        document.write('or :' + (age <= 25+30 || colorChk =='빨강') + "<br/>")
+
+        document.write("<h2>2.4 bit연산자</h2>");
+        /*
+        항 숫자 
+        결과 숫자
+
+        and & a : a & b  모두 ture 경우 ture
+        or |    : a | b  한개이상 true 인경우 ture
+        XoR ^   : A ^ B
+        */
+
+        a = 5; b = 6;
+
+        /*
+            5 : 0101(2)
+            6 : 0110(2)
+
+
+        0 = false 
+        1 = true
+        
+                0101
+            &   0110
+            ----------
+                0100   ----4
+        */
+
+        document.write( a & b)
+        document.write("<br/>");
+
+        document.write( a | b)
+        document.write("<br/>");
+
+        document.write( a ^ b)
+
+        document.write("<h2>2.5 shift연산자</h2>");
+        /*
+        항 숫자 
+        결과 숫자
+
+        << : 왼쪽 shift 자리 밀기
+        6 << 2
+        0110 << 2
+        01 1000 
+        16 + 8  -> 24
+
+
+
+
+        >> ; 오른쪽 shift 자리 밀기
+
+        6 >> 2 
+        0110 >>  2
+        00 0110
+        0001 10
+                ===삭제
+
+        0001    -> 1
+            
+
+        -6 >> 2         -2
+        -6 >>> 2 1073741822
+            
+
+        */
+        document.write(6 >>2)
+        document.write("<br/>")
+        document.write(6 <<2)
+        document.write("<br/>")
+        document.write( -6 >>> 2 )
+        document.write("<br/>")
+    </script>
+</body>
+
+</html>
