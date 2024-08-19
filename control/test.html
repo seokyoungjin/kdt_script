@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //   무한반복은 일정구간을 반복하는것을 반복문이라고 한다 
+
+        //   초기값 조건 증감 
+
+        //   3부터 20까지 2씩 증가
+
+        //   영심이     
+
+        // for (var i = 0; i< 3; i++) {
+
+        //     console.log(i);
+        // }
+
+        // var tot = 0
+        // for ( let i = 1;  i<=10; i++){
+        //     tot +=i
+        //     document.write(i, "->", tot, "<br/>")
+        // }
+        // document.write("1>10 :", tot, "<br/>")
+
+        // tot =0
+        // for( let i = 1; i<=100; i++){
+        //     if ( i %2 ==0) {
+        //         tot +=i
+        //         console.log(i)
+        //         document.write(i, "->",tot, "<br/>")
+        //     }
+        // }
+
+        // tot = 0
+        // for(let i =2; i <=100; i +=2) {
+        //     tot +=i
+        //     console.log(i)
+        //     document.write(i , "- >", tot, "<br/>")
+        // }
+        tot=0
+        for(let i = 1 ; i <=100; i +=2) {
+            i += i %2
+            tot += i
+            tot += i
+            console.log(i)
+        }
+    </script>
+</body>
+</html>

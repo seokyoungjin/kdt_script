@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_reservation</title>
+</head>
+
+<body>
+    <h1>14_reservation</h1>
+    <script>
+
+        TOT: for (;;) {
+
+
+            for (;;) {
+                let res = prompt("1. 아~ 이언맨 \n 2. 슈우~퍼맨 \n 3. 배트맨 \n 4. 다시 \n 5. 처음부터 \n 0. 종료")
+                var movie = ''
+                if (res == '0') {
+                    break TOT
+                } else if (res == '1') {
+                    movie = '아~ 이언맨'
+                    break
+                } else if (res == '2') {
+                    movie = '슈우~퍼맨'
+                    break
+                } else if (res == '3') {
+                    movie = '배트맨'
+                    break
+                }
+            }
+            console.log("영화 선택 종료" + movie)
+
+            for (;;) {
+                let res = prompt("1~5: 타임 \n 6. 다시 \n 7. 처음부터 \n 0. 종료")
+                var time = ''
+                if (res == '0') {
+                    break TOT
+                } else if (res >= '1' && res <= '5') {
+                    time = res
+                    break
+                } else if (res == '7') {
+                    continue TOT
+                } else if (res == '6') {
+                    continue TOT
+                }
+            }
+            console.log("영화 선택" + movie)
+            console.log("영화 타임" + time)
+
+            for (;;) {
+                let res = prompt("1~9: 인원수 \n 10. 다시 \n 11. 처음부터 \n 0. 종료")
+                var cnt = 0
+                if (res == '0') {
+                    break TOT
+                } else if (res >= 1 && res <= 9) {
+                    cnt = res
+                    break
+                } else if (res == '11') {
+                    continue TOT
+                } else if (res == '10') {
+                    continue TOT
+                }
+            }
+            document.write("영화 선택 "+movie+"<br/>")
+            document.write("영화 타임 "+time+"<br/>")
+            document.write("인원수 "+cnt+"<br/>")
+            break // TOT 에대한 break
+        }
+        document.write('영화예매종료')
+    </script>
+</body>
+
+</html>

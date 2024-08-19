@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>08_forScrope</h1>
+    <script>
+        let a =100
+        for(let i = 0; i<3; i++){
+            //let i 반복변수 : 구간 반복 할지라도 최초 선언후 소멸되지않고 유지
+                            //for문 탈출시 소멸 
+
+            let j =10  //내부변수 : 구간 반복마다 선언,소멸 반복
+            var k =20 // 외부변수 : 구간 반복마다 선언 -- > 재 초기화 
+            a++
+            j++
+            k++
+            document.write("for 1:", i," , ",j,",",a,",",k, "<br/>")
+        }
+        document.write("for 1:종료---",a,",",k,"-----<br/>")
+        document.write("<hr>")
+
+        let b = 200
+        for(;b<400; b+=100){ // 반복변수를 외부 변수로 사용 
+            document.write("for 2:", b," , ", "<br/>")
+        }
+        document.write("for 2:종료---",b,"-----<br/>")
+        document.write("<hr>")
+
+        let c = 300
+        for(c=100; c < 400; c+=100){ // 반복변수를 외부 변수로 사용 
+            //초기값 대입
+            document.write("for 2:", c," , ", "<br/>")
+        }
+        document.write("for 2:종료---",c,"-----<br/>")
+        document.write("<hr>")
+
+
+        let d = 300
+        for(d; d < 400; d+=100){ // 반복변수를 외부 변수로 사용 
+            //초기값
+            document.write("for 2:", d," , ", "<br/>")
+        }
+        document.write("for 2:종료---",d,"-----<br/>")
+        document.write("<hr>")
+
+        for(var e =10; e < 50; e+=10){ 
+            // 반복변수를 var 로 선언 : 외부변수로 선언
+            
+            document.write("for 5:", e," , ", "<br/>")
+        }
+        // 반복문 이후에도 외부변수로 사용 
+        document.write("for 5:종료---",e,"-----<br/>")
+        document.write("<hr>")
+
+        for(let f = 0; f<3; f++){
+            // let f 반복 변수 
+
+            // document.write("for 6:시작", f," , ", "<br/>")
+            // f를 내부변수로 인지 == 선언 전으로 해서 에러 발생  == > 에러발생
+
+            let j = 10  //내부변수 : 구간 반복마다 선언,소멸 반복
+            let f = 1234 // 반복변수와 내부 변수 중첩 가능 = 내부변수 > 반복
+
+            document.write("for 6:끝", f," , ",j,",", "<br/>")
+        }
+        document.write("for 6:종료--------<br/>")
+        document.write("<hr>")      
+
+        let g = 456
+        for(let g = 0; g<3; g++){ //  반복(내부) 변수와 외부 변수 중첩 가능 
+            // 우선순위 : 내부 > 반복 > 외부 
+        
+            document.write("for 7:끝", g," ,", "<br/>")
+        }
+        // 외부변수 g 호출
+        document.write("for 7:종료-",g,"-------<br/>")
+        document.write("<hr>")
+
+        // 3,6,9 게임
+        // top =0
+        // for (let z = 1; z<=20; z++){
+
+        //     if ( z%10==3 && z%10==6 && z%10==9){
+        //     }
+        // }
+
+        // for (let i =1; i <= 20; i++) {
+        //     let one = i%10
+        //     console.log(one)
+        //     if(one%3 || !one){
+        //         document.write(i)
+        //     }else {
+        //         document.write("짝")
+        //     }
+        //     document.write("<br/>")
+        // }
+
+        for ( let pp = 1 ; pp <=20; pp++) {
+            if(pp%10 ==3 && pp%10 ==6 && pp%10 ==9){
+                document.write("짝")
+            }else {
+                document.write(pp);
+            }
+        }
+    </script>
+</body>
+</html>

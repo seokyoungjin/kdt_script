@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_for</title>
+</head>
+<body>
+    <h1>05_for</h1>
+    <script>
+    
+        // for (초기화식; 조건식; 증감식){
+
+        // for (let index = 0; index < array.length; index++) {
+        //     const element = array[index];
+            
+        // }
+        // 무한반복
+        // for(; ; ) {
+        //     // document.write("for문 실행 <br/>")
+        // // console.log("for문 실행")
+        // }
+
+        for(let i=0; i< 10 ; i++){
+            // 초기값 ; 증감
+            // console.log("for문 실행",i);
+            document.write("for문 실행",i,"<br/>")
+        }
+
+        document.write("<hr/>")
+
+        var tot = 0 
+        for(let i=1; i<=10 ; i++){
+            // 초기값 ; 증감
+            // console.log("for문 실행",i);
+            tot += i
+            document.write(i, "->",tot, "<br/>")
+        }
+
+        document.write("<hr/>")
+        // for (let i =0; i <4; i++) {
+        //     console.log(i);
+        //     document.write(i);
+        // }
+        // for (var i =1; i > 0; i--) {
+        //     console.log(i);
+        //     document.write(i);
+        // }
+
+        // for ( let i =0 ; i < 3 ; i++) {
+        //     alert(i);
+        // }
+
+        // let i = 0;
+        
+        // for ( i = 0; i <3; i++) {
+        //     alert(i);
+        // }
+
+
+        /*1부터 100 까지 짝수의 합을 구해보라
+            1. 그렇다면 2의 배수를 먼저 뺴야한다 
+            2. 2의 배수를 전부 더해야한다 
+            3  for 문에서 2의 배수만 뽑아야하는데 
+            4 let i 는 2의 배수이어야한다 
+            5 let i 가 2의 배수인 식을 어떻게 ?
+            6 나누면 나머지가 0 인것을 뺴라 ?
+        */         
+        // for (let i =1; i <100; i++) {
+        //     if(i%2 == 0){
+        //         console.log(i)
+
+        //     }
+        
+        // }
+        // document.write()
+
+        // tot =0
+        // for(let i = 2; i <=100; i+2 ) {
+        //     tot +=
+        //     document.write(i,"->", tot, "<br/>")
+        // }
+        // document.write("방법2 :", tot, "<br/>")
+
+        for ( let i =0; i < 10; i++){
+            document.write("for문 실행", i , "<br/>")
+        }
+        
+    </script>
+</body>
+</html>

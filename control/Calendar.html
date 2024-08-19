@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            text-align: center;
+            width: 100vw;
+            /* height: 100vh; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calendar-container {
+            width: 600px;
+            margin: 30px auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fdefde;
+        }
+
+        .TOP_img>img {
+            width: 600px;
+            height: 200px;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .calendar-days {
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <!-- 이미지 -->
+            <div class="TOP_img">
+                <img src="../resouce/Calendar.jpg" alt="">
+            </div>
+            <!-- 년월 -->
+            <h2 id="currentMonth"></h2>
+        </div>
+
+        <!-- 요일 -->
+        <div class="calendar-days">
+            <div class="day">일</div>
+            <div class="day">월</div>
+            <div class="day">화</div>
+            <div class="day">수</div>
+            <div class="day">목</div>
+            <div class="day">금</div>
+            <div class="day">토</div>
+        </div>
+        <!-- 날짜 -->
+        <div class="calendar-dates" id="calendarDates"></div>
+    </div>
+    </div>
+    <script>
+        for (let i = 1; i <= 31; i++) {
+            document.write(i)
+        }
+    </script>
+</body>
+
+</html>
