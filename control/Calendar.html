@@ -15,7 +15,6 @@
             text-align: center;
             width: 100vw;
             /* height: 100vh; */
-            display: flex;
             justify-content: center;
             align-items: center;
         }
@@ -43,7 +42,21 @@
         .calendar-days {
             display: flex;
             justify-content: space-around;
-            padding-bottom: 5px;
+        }
+        .calendar-days > .day {
+            width: 40px;
+            height: 40px;
+            padding: 4px;
+            border: 1px solid #ccc;
+            margin: 5px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .calendar-dates {
+            width: 578px;
+            height: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
         }
     </style>
 </head>
@@ -56,11 +69,12 @@
                 <img src="../resouce/Calendar.jpg" alt="">
             </div>
             <!-- 년월 -->
-            <h2 id="currentMonth"></h2>
         </div>
-
+        
+        <h2 id="currentMonth">2024년 8월</h2>
         <!-- 요일 -->
-        <div class="calendar-days">
+        <div class="
+        ">
             <div class="day">일</div>
             <div class="day">월</div>
             <div class="day">화</div>
@@ -68,13 +82,16 @@
             <div class="day">목</div>
             <div class="day">금</div>
             <div class="day">토</div>
+
         </div>
         <!-- 날짜 -->
-        <div class="calendar-dates" id="calendarDates"></div>
+        <!-- <div class="calendar-dates" id="calendarDates"></div> -->
     </div>
-    </div>
+    
     <script>
-        for (let i = 1; i <= 31; i++) {
+        for(let i=0;i<4;i++){
+            document.write("<day></day>")}
+        for ( let i =1; i <=31; i++) {
             document.write(i)
         }
     </script>

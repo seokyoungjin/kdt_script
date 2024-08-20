@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_index</title>
+</head>
+
+<body>
+    <h1>02_index</h1>
+    <script>
+        let jum = [89, 65, 91, 54, 78]
+        let pname = ["장동건", "장서건", "장남건", "장중건", "북두장건"]
+        //              0       1       2       3       4
+
+        /*          국어    영어    수학   총점     평균
+            이효리  77      78      72
+            삼효리  67      98      92
+            사효리  67      68      62
+            오효리  87      88      82
+        */
+
+        let kor = [77, 67, 67, 87]
+        let eng = [78, 98, 68, 88]
+        let mat = [72, 92, 62, 82]
+        let tot = 0
+        let ppname = ["이효리", "삼효리", "사효리", "오효리"]
+    </script>
+    <table border="">
+        <tr>
+            <td>번호</td>
+            <td>이름</td>
+            <td>점수</td>
+        </tr>
+        <script>
+            for (const i in jum) {
+                let ttt = "<tr><td>" + i +
+                    "</td><td>" + pname[i] +
+                    "</td></td><td>" + jum[i] + "</td></tr>"
+                document.write(ttt)
+            }
+        </script>
+
+    </table>
+
+    <hr>
+    <table border="">
+        <tr>
+            <td>번호</td>
+            <td>이름</td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+            <td>총점</td>
+            <td>평균</td>
+
+        </tr>
+
+        <script>
+            for (const i in kor) {
+                let tot = kor[i]+eng[i]+mat[i]
+                let avg = tot/3
+                let ttt =   "<tr><td>" + i +
+                            "</td><td>" + ppname[i] +
+                            "</td></td><td>" + kor[i] +"<td>"+ eng[i]  +"<td>"+ mat[i] +"<td>"+tot+"<td>"+avg+"</td></tr>"
+                            
+                document.write(ttt)
+                document.write(kor[i]+eng[i]+mat[i])
+            }
+            // document.write(ppname[0]," ",kor[i]+eng[i]+mat[i])
+           
+            document.write(ppname[0]," ",kor[0]+eng[0]+mat[0])
+            document.write(ppname[0]," ",kor[0]," ",eng[0]," ", mat[0])
+
+
+            // 국어의 0 번째 수학의 0 번쨰 수학의 0 번쨰 더하기 
+
+        </script>
+    </table>
+</body>
+
+</html>

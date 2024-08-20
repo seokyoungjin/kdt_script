@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_sort</title>
+</head>
+<body>
+    <h1>03_sort</h1>
+    <script>
+        var a = 10
+        var b = 20
+        document.write(a," ",b ,"<br/>")
+
+        var buf = a
+        a = b 
+        b = buf
+
+        document.write(a," ",b ,"<br/>")
+        
+        document.write("<hr>")
+        var arr = [67,89,34,78]
+        buf = arr[1]
+        arr[1] = arr[2]
+        arr[2] = buf
+        // arr[2] = arr[1] 
+        document.write(arr,"<br/>")
+
+        for (let me =0; me<arr.length; me++ ) {
+
+            // document.write(me,"->",arr[me],"<br/>")
+
+            for(let you = me + 1; you <arr.length; you++){
+                // document.write(you," ,")
+                if(arr[me] > arr[you] ){
+                    buf = arr[me]
+                    arr[me] =arr[you]
+                    arr[you] = buf
+                }
+            }
+                // document.write("<br/>")
+            
+        }
+        document.write("<br/>",arr,"<br/>")
+    </script>
+</body>
+</html>

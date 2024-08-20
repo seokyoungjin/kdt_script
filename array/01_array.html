@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_array</title>
+</head>
+
+<body>
+    <h1>01_array</h1>
+    <script>
+        // 일반 변수 선언
+        // 10 : 값 
+        // a = 10 : 값을 대입 
+        var a = 10
+
+        // b : 배열 변수 선언 
+        // [11,22,'아기상어',true,123.456,'44',22] 배열 생성
+        //  b = [...] : 배열 주소를 대입
+        var b = [11, 22, '아기상어', true, 123.456, '44', 22]
+
+        document.write("a :", a, "<br/>")
+        //  배열변수 호출
+        document.write("b :", b, "<br/>")
+        console.log(a)  
+        console.log(b)
+        document.write("b[2] :", b[2], "<br/>") //변수명[인덱스] 배열원소 호출 
+        document.write("b[-2] :", b[-2], "<br/>") //변수명[인덱스] 배열원소 호출 
+        document.write("b[100] :", b[100], "<br/>") //변수명[인덱스] 배열원소 호출 
+        b[4] = '나는무너'   // 배열원소대입
+        document.write("b :", b, "<br/>")
+        document.write("b[4] :", b[4], "<br/>")
+        document.write("b[4] :", b.length, "<br/>") // 배열 원소 갯수
+        b[10] ="이게위험해요" // 원소 추가
+        document.write("b :",b, "<br/>")
+        document.write("b[7] :" ,b[7], "<br/>")
+        document.write("b[8] :" ,b[8], "<br/>")
+        document.write("b[9] :" ,b[9], "<br/>")
+        document.write("b[10] :" ,b[10], "<br/>")
+        document.write("<hr/>")
+
+        for(let i = 0; i<b.length ; i ++) {
+            document.write("b["+i+"] :",b[i], "<br/>")
+        }
+        document.write("<hr/>")
+
+        for (let i in b) {  //  i : 존재하는 인덱스만 호출  7,8, 9 제외
+            // document.write(i,"<br/>")
+
+            document.write("b["+i+"] :",b[i], "<br/>")
+        }
+        document.write("<hr/>")
+        for (let v of b) {  // 원소값 호출 - > 순차로 처리 : 
+                            // 없는 원소도 호출 (6,7,8) 인덱스 호출 불가
+            document.write( v,"<br/>")
+
+        }
+        document.write("<hr/>")
+
+        b.forEach( function(v,i) { // i = 인덱스 , v = v 원소 
+            document.write( i,":",v, "<br/>")
+        })
+        document.write("<hr/>")
+
+        b.forEach(function (v){ //  v = v 원소 
+            document.write( v, "<br/>")
+        })
+        document.write("<hr/>")
+
+        b.forEach( function(v,i, arr) { // i = 인덱스 , v = v 원소  
+                                        //arr = 배열전체
+            document.write( i,":",v,"<=",arr, "<br/>")
+        })
+        document.write("<hr/>")
+
+        // let jum =[78,91,62,45,88]
+        // let tot = 0
+        // for(let jj of jum){
+            
+        //     tot += jj 
+        // document.write( jj,"=>",tot,"<br/>")
+
+        // }
+        // document.write( tot," : ", tot / jum.length, "<br/>")
+        // document.write("<hr/>")
+        document.write("<hr/>")
+
+        let pass = [45,6,89,12,34,8,23,19,3,88,62,56,21,5,17] // 점수들
+        let passtot = 0 
+        let jjj = 1 // 초기값
+
+        while( jjj => 50) { // i 는 50 이상일때 
+            for (let jjj of pass) {
+                passtot +=jjj
+                document.write( jjj,"=>",passtot,"<br/>")
+            }
+        }
+    </script>
+</body>
+
+</html>
