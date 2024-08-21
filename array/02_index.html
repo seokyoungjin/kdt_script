@@ -14,18 +14,13 @@
         let pname = ["장동건", "장서건", "장남건", "장중건", "북두장건"]
         //              0       1       2       3       4
 
-        /*          국어    영어    수학   총점     평균
+        /*         국어    영어    수학   총점     평균
             이효리  77      78      72
             삼효리  67      98      92
             사효리  67      68      62
             오효리  87      88      82
         */
 
-        let kor = [77, 67, 67, 87]
-        let eng = [78, 98, 68, 88]
-        let mat = [72, 92, 62, 82]
-        let tot = 0
-        let ppname = ["이효리", "삼효리", "사효리", "오효리"]
     </script>
     <table border="">
         <tr>
@@ -54,27 +49,69 @@
             <td>수학</td>
             <td>총점</td>
             <td>평균</td>
-
+            <td>등수</td>
         </tr>
 
         <script>
-            for (const i in kor) {
-                let tot = kor[i]+eng[i]+mat[i]
-                let avg = tot/3
-                let ttt =   "<tr><td>" + i +
-                            "</td><td>" + ppname[i] +
-                            "</td></td><td>" + kor[i] +"<td>"+ eng[i]  +"<td>"+ mat[i] +"<td>"+tot+"<td>"+avg+"</td></tr>"
-                            
-                document.write(ttt)
-                document.write(kor[i]+eng[i]+mat[i])
+
+            // 1 입력부 ==================================================
+            let kor = [77, 97, 67, 87]
+            let eng = [78, 98, 68, 88]
+            let mat = [72, 92, 62, 82]
+            let tot = []
+            let avg = []
+            // let tot = kor[i] + eng[i] + mat[i]
+            // let avg = tot / 3 
+            let avgg = [227, 287, 197, 257]
+            let ppname = ["이효리", "삼효리", "사효리", "오효리"]
+            let rank = new Array()
+
+
+            //2 연산부 ====================================================
+            // 2.1총점 평균
+
+
+            for (let i = 0; i < ppname.length; i++) {
+                tot[i] = kor[i] + eng[i] + mat[i]
+                avg[i] = tot[i] / 3
             }
-            // document.write(ppname[0]," ",kor[i]+eng[i]+mat[i])
-           
-            document.write(ppname[0]," ",kor[0]+eng[0]+mat[0])
-            document.write(ppname[0]," ",kor[0]," ",eng[0]," ", mat[0])
+
+            // 2.1총점 평균
 
 
-            // 국어의 0 번째 수학의 0 번쨰 수학의 0 번쨰 더하기 
+            for (let i = 0; i < ppname.length; i++) {
+                tot[i] = kor[i] + eng[i] + mat[i]   
+                avg[i] = tot[i] / 3
+                document.write(tot)
+            }
+
+            for (const me in avgg) { // 내 점수 및 순서 
+
+                rank[me] = 1 // 내 등수 초기화 
+
+                for (const you of avgg) {    // 비교할 각 점수 (배열)
+                    //document.write(you, "<br/>")
+                    if (avgg[me] < you) {    // 내 점수 < 비교점수 
+                        rank[me]++         // 등위 증가 
+                    }
+                }
+
+            }
+
+
+            // 3 출력부 ====================================================
+            for (const i in kor) {
+
+                let ttt = "<tr><td>" + i +
+                    "</td><td>" + ppname[i] +
+                    "</td></td><td>" + kor[i] + "<td>" + eng[i] + "<td>"
+                    + mat[i] + "<td>" + tot[i] + "<td>" + avg[i] + "<td>" + rank[i] + "</td></tr>"
+
+                document.write(ttt)
+            }
+
+
+
 
         </script>
     </table>
