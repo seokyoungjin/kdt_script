@@ -10,7 +10,7 @@
         var tot = kor + eng + mat
         var avg = tot / 3
         var avg2 = (tot - tot % 3) / 3
-
+        document.write(avg2)
         var grade = avg >= 90 ? "수" :
             avg >= 80 ? "우" :
                 avg >= 70 ? "미" :
@@ -33,8 +33,27 @@
             grade2 = "가"
         };
 
-        var grade3 
+        var grade3
+        switch (avg2 - agv2 % 10) {
+            case 100:
+            case 90:
+                grade3 = "수"
+                break
+            case 80:
+                grade3 = "우"
+                break
 
+            case 70:
+                grade3 = "미"
+                break
+            case 60:
+                grade3 = "양"
+                break
+            default:
+                grade3 = "가"
+                break
+
+        }
 
     </script>
 </head>
