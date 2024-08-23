@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>11_keyArray</h1>
+    <script>
+        // 일반배열
+        let arr1 = [10,20,30,40]
+        // 키배열 (연관배열)  = Object 
+        let arr2 = {"사자" : "포유류", "악어":"파충류","상어" : "어류","오타니":"이도류","악어":"라코스테","간첩":"포유류"}
+
+        // key 중첩 가능 : 마지막 값을 호출
+        // value : 중첩가능
+        //  ID : PW 로 보면됨 . ID는 2개일수 없으니깐
+
+        document.write(arr1[0],"<br/>")
+        document.write(arr2[0],"<br/>") // 에러가 아니라 0 도 얼마든지 key가 될수 잇음 그래서 undefined
+        document.write(arr2['악어'],"<br/>")
+        // document.write(arr1.0,"<br/>")
+        // document.write(arr2.0,"<br/>")
+        document.write(arr2.상어,"<br/>")
+        document.write(arr2['간첩'],"<br/>")
+        document.write(arr2['사자'],"<br/>")
+
+
+
+    </script>
+</body>
+</html>
