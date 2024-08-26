@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- /*
+    다음은 주문 메뉴의 배열이다
+    각 날짜의 주문 합계를 출력하세요
+    
+    주문번호 : 
+    0 - 아메리카노 (2000)
+    1 - 아프리카노 (2300)
+    2 - 아시아노  (2700)
+    
+            아메리카노 ,아프리카노, 아시아노
+    4/10 -     1       2        0
+    4/11 -     2       0        1
+    4/12 -     0       3        0
+    4/13 -     1       1        1
+    
+    
+    4/10 -    6600
+    4/11 -    6700
+    4/12 -    6900
+    4/13 -    7000
+    
+     */ -->
+
+    <script>
+        // <!-- // 1. 입력부 -->
+        let coffe = [
+            
+            { 'day': '4/10', order: [1, 2, 0] },
+            { 'day': '4/11', order: [2, 0, 1] },
+            { 'day': '4/12', order: [0, 3, 0] },
+            { 'day': '4/13', order: [1, 1, 1] }
+        ]
+
+        const price = [2000,2300,2700]
+                   // 2 연산부
+
+        for (const i in coffe) {
+            let co = coffe[i]
+            console.log(co)
+            co.tot = 0
+            // co.tot = co.order[0] * price[0]
+            // co.tot += co.order[1] * price[1]
+            // co.tot += co.order[2] * price[2]
+
+            // co.tot += co.order[i] * price[i]
+            // for (const j of co.order ) {
+
+            // }
+            
+            for(let i=0; i<3; i++) {
+                
+                co.tot += co.order[i] * price[i]
+                // console.log(price)
+                // console.log(co.order)
+            }
+            
+            // for (const jj of price) {
+                
+            // }
+            // console.log( co.order[0])
+            // console.log(co.tot)
+            
+        }
+    </script>
+
+
+
+    <!-- //3 출력부  -->
+
+    <table border="">
+        <tr>
+            <td>구분</td>
+            <td>아메리카노</td>
+            <td>아프리카노</td>
+            <td>아시아노</td>
+            <td>총가격</td>
+        </tr>
+        <script>
+            for (const i in coffe) {
+                // console.log(i)
+                let co = coffe[i]
+                let ttt = "<tr>"
+                ttt += "<td>" + co.day + "</td>"
+                for (const j of co.order) {
+                    ttt += "<td>" + j + "</td>"
+                }
+                ttt += "<td>" + co.tot + "</td>"
+                ttt += "</tr>"
+                document.write(ttt)
+            }
+        </script>
+
+    </table>
+</body>
+
+</html>

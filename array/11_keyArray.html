@@ -1,33 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>11_keyArray</h1>
     <script>
         // 일반배열
-        let arr1 = [10,20,30,40]
-        // 키배열 (연관배열)  = Object 
-        let arr2 = {"사자" : "포유류", "악어":"파충류","상어" : "어류","오타니":"이도류","악어":"라코스테","간첩":"포유류"}
+        let arr1 = [10, 20, 30, 40]
+
+        // 키배열 (연관배열)  = Object 생성 
+        let arr2 = { "사자": "포유류", "악어": "파충류", "상어": "어류", "오타니": "이도류", "악어": "라코스테", "간첩": "포유류" }
 
         // key 중첩 가능 : 마지막 값을 호출
         // value : 중첩가능
         //  ID : PW 로 보면됨 . ID는 2개일수 없으니깐
 
-        document.write(arr1[0],"<br/>")
-        document.write(arr2[0],"<br/>") // 에러가 아니라 0 도 얼마든지 key가 될수 잇음 그래서 undefined
-        document.write(arr2['악어'],"<br/>")
+        document.write(arr1[0], "<br/>")
+        document.write(arr2[0], "<br/>") // 에러가 아니라 0 도 얼마든지 key가 될수 잇음 그래서 undefined
+        document.write(arr2['악어'], "<br/>")
         // document.write(arr1.0,"<br/>")
         // document.write(arr2.0,"<br/>")
-        document.write(arr2.상어,"<br/>")
-        document.write(arr2['간첩'],"<br/>")
-        document.write(arr2['사자'],"<br/>")
+        document.write(arr2.상어, "<br/>")   // 호출
+        document.write(arr2['간첩'], "<br/>")    //호출
+        document.write(arr2['사자'], "<br/>")
+        arr2["사자"] = "팔자" // 대입
+        document.write(arr2['사자'], "<br/>")     // 호출
+        arr2["호랑이"] =" 포유류" //추가
+
+
+        console.log(arr1)
+        console.log(arr2)
+        console.log(arr1.length)    // 일반배열 원소 갯수 
+        console.log(arr2.length)    // key 배열은 length 가 없다 
+        delete arr2["상어"]         // 삭제
+        delete arr1[2]
+        console.log(arr1)
+        console.log(arr2)
+
+        ///  CRUD
+        //  Create  Read   Update  Delete
+        //  생성     읽기   수정    삭제
+        //  글쓰기   목록   수정    삭제
+        //           삭제 
+
+        // 검색
+        document.write(2 in arr1, "<br/>") //in  =  index 유무 
+        document.write(3 in arr1, "<br/>")
+        document.write("악어" in arr2, "<br/>")
+        document.write("악뮤" in arr2, "<br/>")
+
+        document.write("<hr/>")
+
+        for (const i in arr1) {
+            document.write(i, "<br/>")
+        }
+
+        document.write("<hr/>")
+
+        for (const i in arr2) {
+            document.write(i, "<br/>")
+        }
+
+        document.write("<hr/>")
+
+        for (const i of arr1) {
+            document.write(i, "<br/>")
+        }
+
+        document.write("<hr/>")
+
+        // for (const i of arr2) {           { }키 배열 불가 
+        //순서대로 되어 있지 않음
+        //키배열 (연관배열)  = Object 생성 
+        //     document.write(i, "<br/>")
+        // }
+
+        //  추출
+        let kk = Object.keys(arr1)  // index로 구성된 배열 
+        document.write(kk, "<br/>") // 013
+        // object = 객체 
+        document.write("<hr/>")
+
+        kk = Object.keys(arr2)  // key 로 구성된 배열
+        document.write(kk, "<br/>") // 사자,악어,오타니,간첩
+        document.write("<hr/>")
+
+        let vv = Object.values(arr1)    // value 로 구성된 배열
+        document.write(vv, "<br/>")     //10,20,40
+        document.write("<hr/>")
+
+        vv = Object.values(arr2)
+        document.write(vv, "<br/>")
+        document.write("<hr/>")
+
+        for (const i of vv) {
+            document.write(i, "<br/>")
+        }
+        document.write("<hr/>")
+
+        for (const i of Object.values(arr2)) {
+            document.write(i, "<br/>")
+        }
+
+        
+
 
 
 
     </script>
 </body>
+
 </html>
