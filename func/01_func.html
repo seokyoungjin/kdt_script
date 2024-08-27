@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_func</title>
+</head>
+<body>
+    <h1>01_func</h1>
+    <script>
+        /*
+            함수 정의
+            함수 이름 fn :
+            매개 변수 : aa, bb
+            리턴값 : 1234
+        */
+        function fn(aa,bb) {
+
+            document.write("fn실행",aa," , ",bb,"<br/>") //실행코드
+            return 1234
+        }
+        // 매개변수 x 리턴 x
+        function fn_1() {
+
+        document.write("fn_1실행: param X, ret x<br/>") //실행코드
+        }
+
+        // 매개변수 o 리턴 x
+        function fn_2(aa,bb,cc) {
+        
+        document.write("fn_2실행: ",aa,",",bb,",",cc,", ret X <br/>") //실행코드
+        return
+        }
+
+        // 매개변수 X 리턴 O
+        function fn_3() {
+        
+        document.write("fn_3실행: param X, ret O <br/>") //실행코드
+        return "엄마상어"
+        }
+
+
+        let rr = fn(10,"아기상어") // 함수 호출
+        document.write("리턴 :",rr,"<br/>")
+        fn(20)
+        fn(30,40,50)
+        fn_1()
+        rr = fn_1(1122)
+        document.write("리턴 : ",rr, "<br/>")
+        rr = fn_2("티라노","예스라노","브이라노")
+        document.write("리턴 : ",rr, "<br/>")
+        rr = fn_3("티라노","예스라노","브이라노")
+        document.write("리턴 : ",rr, "<br/>")
+
+        function rectangle(ww,hh) {
+            let area = ww * hh
+            let border = (ww + hh) * 2
+            document.write("직사각형 넓이 : ",area , ",둘레:",border , "<br/>")
+        }
+        rectangle(10,20)
+        rectangle(5,6)
+
+        document.write("<hr/>")
+
+        circle(5)
+        circle(7)
+        triAngle(5,6,8)
+        triAngle(10,20,23)
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_parameter</title>
+</head>
+<body>
+    <h1>02_parameter</h1>
+    <script>
+        function fn_1 (aa,bb) {
+            document.write("fn_1():",aa,", ",bb,"<br>")
+        }
+        function fn_2 (aa,bb="아기상어") {
+            document.write("fn_2():",aa,", ",bb,"<br>")
+        }
+        function fn_3 (aa = "엄마상어",bb) {
+            document.write("fn_2():",aa,", ",bb,"<br>")
+        }
+        function fn_4 (aa, bb, cc = aa+bb) {
+            document.write("fn_4():",aa,", ",bb,",",cc,"<br>")
+        }
+        fn_1(10,20)
+        fn_1(10)
+        fn_1()
+
+        fn_2(10,20)
+        fn_2(10)
+        fn_2()
+
+        fn_3(10,20)
+        fn_3(10)
+        fn_3()
+
+        fn_4(10,20,77)
+        fn_4(10,20)
+        fn_4(10)
+        fn_4()
+
+        document.write("<hr>")
+        let arr = [1234,5678]
+        let x,y 
+        [x,y] = arr
+        document.write("arr :" ,arr,"<br/>")
+        document.write("x :" ,x,",y:",y,"<br/>")
+
+        document.write("<hr>")
+        let arr1= [111,222,333]
+        document.write("arr1 :" ,arr1,"<br/>")
+        let z
+        [x,y,z] = arr1
+        document.write("x :" ,x,",y:",y,",z:",z,"<br/>")
+        document.write("<hr>")
+
+        function fn_5 ([aa,bb]) {
+            document.write("fn_5 :" ,aa,",",bb,"<br/>")
+        }
+        fn_5([11,22])
+        fn_5([11])
+        fn_5([])
+        // fn_5(111,222) 에러 발생
+        document.write("<hr>")
+        function fn_6 ([aa,bb] = ["아기상어","엄마상어"]) {
+            document.write("fn_6() :" ,aa,",",bb,"<br/>")
+        }
+        fn_6([11,22])
+        fn_6()
+        fn_6([11]) // 11, undefined -- 초기값 대입 안함
+        fn_6([])   // undefined, undefined 초기값 대입 안함
+        document.write("<hr>")
+
+        let arr2 = {q:"장동건",y:"장서건",t:"장남건",y:"장중건",x:"북두신건"}
+        //{x,y}  = arr2 에러
+        let arr3 = {y:"장서건",y:"장중건",x:"북두신건"}
+        // {x,y} = arr3 에러 
+        function fn_7 ({aa,bb}) { // key 로 인지 
+            document.write("fn_7() :" ,aa,",",bb,"<br/>")
+        }
+        function fn_8 ({aa,bb} ={aa:"아빠상어",bb:"할머니상어"}) { // key 로 인지 
+            document.write("fn_8() :" ,aa,",",bb,"<br/>")
+        }
+        fn_7({aa:"용감한",bb:"구조대"})
+        fn_7({cc:"용감한",bb:"구조대"}) // undefined, 폴리 key 가 맞아야함
+        fn_7({cc:"로이",bb:"폴리",aa:"엠버",bb:"헬리"}) // 엠버 , 헬리
+        fn_7({})
+        // fn_7() 에러
+        document.write("<hr/>")
+        fn_8({aa:"용감한",bb:"구조대"})
+        fn_8({cc:"용감한",bb:"구조대"}) // undefined, 폴리 key 가 맞아야함
+        fn_8({cc:"로이",bb:"폴리",aa:"엠버",bb:"헬리"}) // 엠버 , 헬리
+        fn_8({})        // undefined ,  undefined
+        fn_8()          // 아빠상어   ,  할머니상어
+        document.write("<hr/>")
+        function fn_9 ([a,b]=[11,22],{c,d}={c:99,d:88},e = a+b+c) { // key 로 인지 
+            document.write("fn_9() :" ,a,",",b,",",c,",",d,",",e,"<br/>")
+        }
+        fn_9()
+        fn_9([100,200]) // 100,200,99,88,399
+        // fn_9({c:333,d:444}) 에러 = 위치가 맞지 않음 
+        fn_9([100,200],1357)   // 100 , 200 ,undefined,undefined,NaN
+        fn_9([100,200],{c:333,d:444})
+        fn_9([100,200],{c:333,d:444},1357)
+        document.write("<hr/>")
+
+        // 초기값은 왜 필요 할까 
+
+        function order(menu,cnt=1) {
+            const price = {
+                "아메리카노":2000,
+                "아프리카노":2300,
+                "아시아노":2700
+            }
+            const tot = price[menu] * cnt 
+
+            document.write("별다방:", menu, "(",cnt,")",tot,"<br/>")
+        }
+        order("아메리카노",3)
+        order("아메리카노")
+
+        /*
+            학생이름, //국어, 영어  수학 점수를 //매개변수로 받아 
+
+            학생이름,국어,수학 총점 평균 출력하세요
+            국어 영어 수학 점수가 없다면 각각 0점 처리해주세요
+
+        */
+
+
+        function exam(pname, kor=0, eng=0, mat =0  ){
+                                    // 매개변수 parameter
+            const tot = kor + eng + mat
+            const avg = tot/3
+            // document.write(jum)
+            document.write(tot,avg)
+        }
+        exam() // 인수 argument
+        // function test([a,b]=["철이","짱구"],jum=0) {
+        //     //        학생 = 점수 
+        //     //  왠지 
+        //     //  a , b( 점수 )  = 초기값은 0 점이다
+        //     const subject = {
+        //         "국어":80,
+        //         "영어":70,
+        //         "수학":50
+        //     }
+        //     const toto = subject[stud] +jum
+        //     document.write("학생 :",stud,"과목 :","(",jum,")",toto,"<br/>")
+        // }
+        // test("국어",)
+    </script>
+</body>
+</html>
