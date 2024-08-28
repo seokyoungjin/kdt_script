@@ -129,24 +129,16 @@
         function exam(pname, kor=0, eng=0, mat =0  ){
                                     // 매개변수 parameter
             const tot = kor + eng + mat
+            //  함수는 재사용 가능하기 떄문에 매개변수를 주고 function 밖에서 
+            //  인수 function 밖에서 함수를 할당한다 
             const avg = tot/3
             // document.write(jum)
-            document.write(tot,avg)
+            document.write(pname, ":", kor," , ",eng," , ",mat," , ",tot," , ",avg,"</br/>")
         }
-        exam() // 인수 argument
-        // function test([a,b]=["철이","짱구"],jum=0) {
-        //     //        학생 = 점수 
-        //     //  왠지 
-        //     //  a , b( 점수 )  = 초기값은 0 점이다
-        //     const subject = {
-        //         "국어":80,
-        //         "영어":70,
-        //         "수학":50
-        //     }
-        //     const toto = subject[stud] +jum
-        //     document.write("학생 :",stud,"과목 :","(",jum,")",toto,"<br/>")
-        // }
-        // test("국어",)
+        exam("정우성",78,76,74)
+        exam("정좌성",78,76)
+        exam("정남성",78)
+        exam("정중성")
     </script>
 </body>
 </html>

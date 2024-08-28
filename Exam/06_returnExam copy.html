@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function order(day,aaa,bbb,ccc) {
+                            // 매개변수 
+            //  aaa = 아메리카노  bbb = 아메리카노  ccc 아시아노 
+            // document.write(day,aaa,bbb,ccc)
+           
+            let tot =  aaa * 2000 + bbb * 2300 + ccc * 2700
+            document.write(day,tot)
+            return {day:day,tot:tot}
+        }
+        // 인자 
+        
+
+        //  출력
+        function trCoffe(cu) { // 커피 주문 객체 
+            let ttt=   "<tr>"
+                ttt += "<td>"+cu.day+"</td>"
+                ttt += "<td>"+cu.tot+"</td>"
+                
+                ttt+="</tr>"
+            document.write(ttt)
+        }
+
+        //  커피 주문 내역서
+        let coffes= [
+            order("4/10",1,2,0),
+            order("4/11",2,0,1),
+            order("4/12",0,3,0),
+            order("4/13",1,1,1)
+        ]
+        console.log(coffes)
+    </script>
+
+    <table border="">
+        <tr>
+            <td>날짜</td>
+            <td>합계</td>
+        </tr>
+        <script>
+            for(const bb of coffes
+            ){
+                trCoffe(bb)
+            }
+        </script>
+    </table>
+</body>
+</html>

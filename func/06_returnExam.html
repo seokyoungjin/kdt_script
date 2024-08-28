@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_returnExam</title>
+</head>
+<body>
+    <h1>06_returnExam</h1>
+    <script>
+
+        // 데이터 입력 및 계산 
+        function inputStud(name,...jum) {
+
+            const rate = [0.05,0.1,0.15,0.7]
+            const kind = "일반,특기생".split(",")[jum.length-3]
+            let tot = 0
+            let avg = 0
+            
+            for (const i in jum) {
+                tot +=jum[i]
+                avg +=jum[i] * rate[i]
+            }
+            if(kind =="일반"){
+                avg = tot / jum.length
+            }
+            
+
+            return{kind:kind,name:name,jum:jum,tot:tot,avg:avg}
+        }
+
+        // tr 출력 
+        function trStud(st){  // st 학생 1명 
+            let ttt = "<tr>"
+            ttt += "<td>"+st.kind+"</td>"
+            ttt += "<td>"+st.name+"</td>"
+
+            for (const i in st.jum) {
+                ttt += "<td>" +st.jum[i]+"</td>"
+            }
+            
+            if(st.kind=="일반"){
+                ttt += "<td></td>"
+            }
+
+            ttt += "<td>"+st.tot+"</td>"
+            ttt += "<td>"+st.avg+"</td>"
+            ttt += "</tr>"
+            document.write(ttt)
+        }
+        //  학생들 배열 정보 
+        let studs = [
+            inputStud("이동준",37,68,99),
+            inputStud("삼동준",37,58,79,92),
+            inputStud("사동준",97,68,39),
+            inputStud("오동준",97,78,59,32),
+            inputStud("육동준",67,68,69,62),
+            inputStud("육동준",67,68,69,)
+        ]
+        console.log(studs)
+        // console.log(inputStud("이동준",67,68,88))
+    </script>
+
+<table border="">
+    <tr>
+        <td>구분</td>
+        <td>이름</td>
+        <td>국어</td>
+        <td>영어</td>
+        <td>수학</td>
+        <td>예체능</td>
+        <td>총점</td>
+        <td>평균</td>
+    </tr>
+    <script>
+        // trStud(studs[0]) 확인하고 해라 = 한명꺼 먼저 해봐라 
+        // 학생들 배열 출력 
+        for (const aa of studs) {   // 각 한명식
+            trStud(aa)
+            
+        }
+    </script>
+</table>
+
+</body>
+</html>
