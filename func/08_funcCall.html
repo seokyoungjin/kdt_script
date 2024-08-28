@@ -11,7 +11,7 @@
         var a = 10 
         let b = 20
         const c = 30
-
+        // 함수 와 대화 할때는 매개변수와 리턴
         function fn_1(pp) { // 매개변수 - > 지역변수 
             var aa ="아빠상어" // 지역변수
             let bb = "엄마상어" 
@@ -19,16 +19,18 @@
             d = "할아버지상어" , e = "삼촌상어" // 전역변수 선언  페이지 내 어디서는 접근 가능
             document.write("fn_1() 시작 ",a,",",b,",",c,",",d,",",e,"---------<br/>")
             document.write("fn_1() : ",aa," , ",bb,",",cc,",",pp,"<br/>")
-            fn_2()// 함수호출 ; caller - fn_1 , callee - fn_2
+            fn_2("이모상어","고모상어")// 함수호출 ; caller - fn_1 , callee - fn_2
             document.write("fn_1()  끝 -----------------<br/>")
         }
-        function fn_2() { // caller - fn_1
+        function fn_2(pp2,pp3) { // caller - fn_1
             //  지역 > 외부 , 전역 
             let a = "폴리"  // 함수 외부 변수 중첩 가능
             var d = "로이"  // 전역 변수 중첩 가능
             e = "엠버" // 선언이 아니고 전역변수 대입 !
+            let pp2 = "헬리" //매개변수 , var 중첩 가능 
+            // let pp3 ="클리니"  // 매개변수 , let 중첩불가
             let pre ="&nbsp;&nbsp;&nbsp;&nbsp;"
-            document.write("fn_2() :시작 ",a," , ",b,",",c,",<br/>")
+            document.write("fn_2() :시작 ",a," , ",b,",",c,",",pp2,pp3,"<br/>")
             document.write(pre+"fn_2() :",d,e,"<br/>")
             fn_3()// 함수호출
             document.write(pre+"fn_2()  끝 -----------------<br/>")
