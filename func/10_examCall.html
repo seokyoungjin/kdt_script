@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>10_examCall</h1>
+    <script>
+        function inputStud(arr) {
+
+            const rate = [0.05, 0.1, 0.15, 0.7]
+            const kind = "일반,특기생".split(",")[arr.length - 4]
+            let tot = 0
+            let avg = 0
+            let jum = arr.slice(1)
+            //  slice 1번 쨰부터 해라 
+
+            for (const i in jum) {
+                tot += jum[i]
+                avg += jum[i] * rate[i]
+            }
+            if (kind == "일반") {
+                avg = tot / jum.length
+            }
+
+            return { kind: kind, name: arr[0],jum:jum, tot: tot, avg: avg }
+        }
+
+        function printPre(title) {
+            let ttt = "<table border=''><td>"
+                // let arr = "구분,이름,국어,영어,예체능,총점,평균".split(",")
+                // for (const t of arr) {
+                //     ttt += "<td>" +t+ "</td>"
+                // }
+                // ttt += "<td>구분</td>"
+
+                let arr = title.split(",")
+                for (const t of arr) {
+                    ttt += "<td>" +t+ "</td>"
+                }
+                ttt += "<td>구분</td>"
+
+
+                ttt += "</tr>"
+                document.write(ttt)
+                // <td>구분</td>
+                // <td>이름</td>
+                // <td>국어</td>
+                // <td>영어</td>
+                // <td>수학</td>
+                // <td>예체능</td>
+                // <td>총점</td>
+                // <td>평균</td>
+        }
+
+        function printSur() {
+                document.write("</table>")
+        }
+
+        function trStud(st){  // st 학생 1명 
+            let ttt = "<tr>"
+            ttt += "<td>"+st.kind+"</td>"
+            ttt += "<td>"+st.name+"</td>"
+
+            for (const i in st.jum) {
+                console.log(i)
+                ttt += "<td>" +st.jum[i]+"</td>"
+            }
+            
+            if(st.kind=="일반"){
+                ttt += "<td></td>"
+            }
+
+            ttt += "<td>"+st.tot+"</td>"
+            ttt += "<td>"+st.avg+"</td>"
+            ttt += "</tr>"
+            document.write(ttt)
+        }
+
+        function exam(...mmm) {
+            console.log(mmm) // 
+            /*
+            let ss = inputStud(mmm[0])
+            // mmm[0] : ["이동준",37,68,99]
+            //        ↓
+            //ss:{kind: '일반', name: '이동준', jum: [37,68,99], tot: 204, avg: 68}
+            console.log(ss)
+            studs.push(ss) 
+            ss = inputStud(mmm[1])
+            console.log(ss)
+            studs.push(ss)  
+            studs[  
+                        0:{kind: '일반', name: '이동준', jum: [37,68,99], tot: 204, avg: 68}
+                ]
+            */
+
+
+            // 1 . 입력 & 연산부
+            let studs =[] // 여기 안에 넣겠다 
+
+            for (const m of mmm) {
+                console.log(m)
+                //let ss = inputStud[m]
+                studs.push( inputStud(m))
+                }
+            
+            let ss = inputStud(mmm[0])
+            
+            studs.push(ss)
+            // console.log(studs)
+
+
+            // 2 출력부
+
+            printPre("구분,이름,국어,영어,예체능,총점,평균")
+
+            for(const aa of studs) {
+                console.log(aa)
+                trStud(aa)
+            }
+            printSur()
+
+
+
+        }//
+
+        exam(   // exam 하나로 다 해 먹는거 
+            ["이동준", 37, 68, 99],
+            ["삼동준", 37, 58, 79, 92],
+            ["사동준", 97, 68, 39],
+            ["오동준", 97, 78, 59, 32],
+            ["육동준", 67, 68, 69, 62],
+            ["칠동준", 67, 68, 69,]
+        )
+
+        // document.write(studs)
+    </script>
+</body>
+
+</html>

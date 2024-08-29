@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_recusiveCall</title>
+</head>
+<body>
+    <h1>11_recusiveCall</h1>
+    <script>
+        let pre = ""
+        function fn(nn) {
+            let myPre = pre
+            pre += "&nbsp;&nbsp;&nbsp;&nbsp;"
+            let res = nn
+
+            document.write(myPre,"fn 시작 ",nn,",",res," ================<br/>")
+                                        //  3       3
+            if (nn>0){  // 조건 
+                res += fn(nn-1) // 재귀호출 증감 : -1 
+                //  정의는 하나되어있고 호출은 4개 되어있다 
+            }
+            document.write(myPre,"fn 끝 ",nn,",",res," ================<br/>")
+
+            
+            return res
+        }
+        let rr = fn(3) // 초기값 : 3
+        // 짝수의 합을 구해라 
+        document.write("rr :", rr, "<br/>")
+
+    </script>
+</body>
+</html>

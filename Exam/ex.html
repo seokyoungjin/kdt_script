@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                    /*
+            직사각형을 출력하는 함수를 구현하세요 
+
+            직사각형 넓이 둘레 출력 
+
+            직사각형 함수 안에서 
+                직사각형 넓이 , 둘레를 계산하는 함수 
+                직사각형의 넓이 , 둘레를 출력하는 함수를
+                호출하여 구현 '
+            
+            직사각형 딱~ 1개!!!!!!!!!!!!!!! 원래는 함수 하나로 되지만
+            
+            구분을 해라 / 직사각형 넓이 둘레 호출 / 리턴으로 매개변수로 출력하는 함수 
+            
+            리턴이 넓이이와 길이를 호출한다  reture {넓이:넓이, 둘레:둘레}
+
+            for 문 하나도 안들어감 ' 함수는 두개 밖에다 만들어야함 
+
+            */
+
+        //  part 1
+        function ppp (abc,efg){
+            document.write("넓이:",abc,"<br/>") // 호출을 안에서 
+            document.write("둘레:",efg)
+        }
+        function printa(width ,height ) {                           //1
+            let tot = area(width,height)
+            let toto = area2(width,height)
+            // 넓이 
+            // 둘레 
+            // document.write("넓이:",tot,"<br/>") // 호출을 안에서 
+            // document.write("둘레:",toto)
+            ppp (tot,toto)
+        }
+        function area (a,b){
+            // 넓이
+           return a * b
+        }
+        function area2 (a,b) {
+            // 둘레 
+            return (a+b) *2 
+        }
+        
+        printa(3,10) 
+        document.write("<hr>")
+        // /넓이 ,둘레 출력하는 함수 
+
+        //  part 2 
+        function recCalc(ww, hh){
+            //document.write("recCalc",ww,hh)
+            return {area : ww * hh , border : (ww + hh) * 2}
+        }
+
+        function recPPP({area, border}){
+            document.write("recPPP : ",area," , ", border)
+        }
+
+        function rectangle(width, height){
+            //let rr = recCalc(width, height)
+            //console.log(rr)
+            //recPPP(rr)
+            recPPP(recCalc(width, height))
+        }
+
+        rectangle(5,6)
+        
+    </script>
+</body>
+</html>
