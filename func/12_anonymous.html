@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12_anonymous</title>
+</head>
+
+<body>
+    <h1>12_anonymous</h1>
+    <script>
+
+        // 선언ㄴ적함수 
+        function fn_a(aa, bb) {
+            document.write("fn_a :", aa, ",", bb, "<br/>")
+            return "아기상어"
+        }
+
+        let vv_a = fn_a // 함수이름으로 변수에 대입
+        //  같은 주소 를 복사해서 가져옴
+
+        /*
+                function fn_a(aa,bb) {
+                    document.write("fn_a :",aa,",",bb,"<br/>")
+                    return "아기상어"
+                }
+        */
+        // 익명함수 
+        function vv_b(aa, bb, cc) {
+            document.write("fn_a :", aa, ",", bb, cc, "<br/>")
+            return "엄마상어"
+        }
+        // vv _ c  : o , fn_c :x
+        let vv_c = function fn_c(aa, bb, cc) {
+            document.write("fn_a :", aa, ",", bb, cc, "<br/>")
+            return "아빠상어"
+        }
+
+        let rr = fn_a("제육", "제철")// 함수호출
+        document.write("rr :", rr, "<br/>")
+        let qq = vv_a("돈가스", "돈나스")
+        document.write("qq:", rr, "<br/>")
+        rr = vv_b("수육", "우육", "미육")
+        document.write("rr:", rr, "<br/>")
+        rr = vv_c("수육", "우육", "미육")
+        document.write("rr:", rr, "<br/>");
+
+        // function (aa) {
+        //     document.write(":",aa,"<br>")
+        //     return "엄마상어"
+        // }("짜장")
+
+        //  익명함수 정의 및 호출 
+        (function (aa) {
+            document.write(":", aa, "<br>");
+            return "할아버지 상어"
+        }("짬뽕"));
+
+        rr = (function (aa) {
+            document.write(":", aa, "<br>")
+            return "삼촌상어"
+        }("탕수육"));
+        document.write("rr:", rr, "<br>");
+
+        rr = function (aa) {
+            document.write(":", aa, "<br>")
+            return "이모상어"
+        }("꿔바로우");
+        document.write("rr:", rr, "<br>");
+
+
+        // 람다함수 정의 및 호출 
+        ((aa) => {
+            document.write("람다:", aa, "<br>")
+            return "고모상어"
+        })("다람쥐");
+
+        // 함수 정의 
+        let vv_d = (aa, bb) => {
+            document.write("람다+익명", aa, ",", bb, "<br>")
+
+            return "언니상어"
+        }
+
+        rr = vv_d("나람쥐", "가람쥐")
+        document.write("rr:", rr, "<br>");
+
+        // 람다함수 정의 및 호출 
+        let tt = ((aa) => {
+            document.write("람다:", aa, "<br>")
+            return "오빠상어"
+        })("라람쥐");
+        document.write("tt:", tt, "<br>");
+
+        // 람다함수의 축약
+        vv_d = aa => { //매개변수 1개일때 괄호제거
+            document.write("매개변수 괄호제거:", aa, "<br>")
+            return "사빠상어"
+        }
+        rr = vv_d("배영");
+        document.write("tt:", rr, "<br>");
+
+        vv_d = aa => // 중괄호는 실행코드가 1줄인 경우 가능 
+            document.write(" 중괄호제거:", aa, "<br>")
+        //return"삼빠상어"
+
+        rr = vv_d("사과영");
+        document.write("tt:", rr, "<br>");
+
+        vv_d = aa => { return "아빠상어" }
+
+        rr = vv_d("이뻐영");
+        document.write("tt:", rr, "<br>");
+
+        // 중괄호 제거시 리턴값으로 처리 
+        vv_d = aa => "일빠상어"
+
+        rr = vv_d("올리브영");
+        document.write("tt:", rr, "<br>");
+
+        // vv_d =  = > "육빠상어"
+        vv_d = () => "칠빠상어"
+
+        rr = vv_d();
+        document.write("tt:", rr, "<br>");
+
+        vv_d = (ww,hh) => [ww*hh , (ww+hh)*2]
+
+
+        rr = vv_d(5,6);
+        document.write("tt:", rr, "<br>");
+
+        vv_d = (...arr) => arr.sort()[0]
+        rr = vv_d(45,67,82,13,42,34,11,78,65,16,23)
+        document.write("rr:",rr,"<br/>")
+
+        vv_d = (...arr) => arr.sort().reverse()[0]
+        rr = vv_d(45,67,82,13,42,34,11,78,65,16,23)
+        document.write("rr:",rr,"<br/>");
+
+        //  입력한 수1개가 2 혹은 3의 배수인지 리턴값으로 알게 해주세요
+        //  람다로 처리 
+        //  flase or ture 로 나타내기 
+        
+        //num % 2 == 0 || num % 3 == 0  2혹은 3의 배수인지 
+        // let num = 0  입력한 수 1개 
+        // vv_p = (nmu) => 
+        // rrr = vv_p (num % 2 === 0 || num % 3 === 0){} 
+        
+        function op(num){
+            return num % 2 == 0 || num % 3 == 0  
+        }
+        // document.write(op);
+        rr = op(6)
+        document.write("rr:",rr,"<br/>");
+
+
+        
+
+        // oio = opo() => 
+    </script>
+</body>
+
+</html>
